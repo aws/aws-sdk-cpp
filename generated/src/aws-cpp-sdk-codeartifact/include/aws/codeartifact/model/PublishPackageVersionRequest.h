@@ -181,37 +181,37 @@ namespace Model
 
     /**
      * <p>A format that specifies the type of the package version with the requested
-     * asset file.</p>
+     * asset file.</p> <p>The only supported value is <code>generic</code>.</p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
      * <p>A format that specifies the type of the package version with the requested
-     * asset file.</p>
+     * asset file.</p> <p>The only supported value is <code>generic</code>.</p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>A format that specifies the type of the package version with the requested
-     * asset file.</p>
+     * asset file.</p> <p>The only supported value is <code>generic</code>.</p>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>A format that specifies the type of the package version with the requested
-     * asset file.</p>
+     * asset file.</p> <p>The only supported value is <code>generic</code>.</p>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>A format that specifies the type of the package version with the requested
-     * asset file.</p>
+     * asset file.</p> <p>The only supported value is <code>generic</code>.</p>
      */
     inline PublishPackageVersionRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
      * <p>A format that specifies the type of the package version with the requested
-     * asset file.</p>
+     * asset file.</p> <p>The only supported value is <code>generic</code>.</p>
      */
     inline PublishPackageVersionRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 

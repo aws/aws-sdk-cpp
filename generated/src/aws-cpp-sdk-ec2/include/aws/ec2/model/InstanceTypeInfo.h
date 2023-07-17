@@ -20,6 +20,8 @@
 #include <aws/ec2/model/PlacementGroupInfo.h>
 #include <aws/ec2/model/InferenceAcceleratorInfo.h>
 #include <aws/ec2/model/NitroEnclavesSupport.h>
+#include <aws/ec2/model/NitroTpmSupport.h>
+#include <aws/ec2/model/NitroTpmInfo.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
 #include <aws/ec2/model/VirtualizationType.h>
@@ -822,6 +824,68 @@ namespace Model
      */
     inline InstanceTypeInfo& WithNitroEnclavesSupport(NitroEnclavesSupport&& value) { SetNitroEnclavesSupport(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline const NitroTpmSupport& GetNitroTpmSupport() const{ return m_nitroTpmSupport; }
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline bool NitroTpmSupportHasBeenSet() const { return m_nitroTpmSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline void SetNitroTpmSupport(const NitroTpmSupport& value) { m_nitroTpmSupportHasBeenSet = true; m_nitroTpmSupport = value; }
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline void SetNitroTpmSupport(NitroTpmSupport&& value) { m_nitroTpmSupportHasBeenSet = true; m_nitroTpmSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline InstanceTypeInfo& WithNitroTpmSupport(const NitroTpmSupport& value) { SetNitroTpmSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline InstanceTypeInfo& WithNitroTpmSupport(NitroTpmSupport&& value) { SetNitroTpmSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline const NitroTpmInfo& GetNitroTpmInfo() const{ return m_nitroTpmInfo; }
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline bool NitroTpmInfoHasBeenSet() const { return m_nitroTpmInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline void SetNitroTpmInfo(const NitroTpmInfo& value) { m_nitroTpmInfoHasBeenSet = true; m_nitroTpmInfo = value; }
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline void SetNitroTpmInfo(NitroTpmInfo&& value) { m_nitroTpmInfoHasBeenSet = true; m_nitroTpmInfo = std::move(value); }
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithNitroTpmInfo(const NitroTpmInfo& value) { SetNitroTpmInfo(value); return *this;}
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithNitroTpmInfo(NitroTpmInfo&& value) { SetNitroTpmInfo(std::move(value)); return *this;}
+
   private:
 
     InstanceType m_instanceType;
@@ -898,6 +962,12 @@ namespace Model
 
     NitroEnclavesSupport m_nitroEnclavesSupport;
     bool m_nitroEnclavesSupportHasBeenSet = false;
+
+    NitroTpmSupport m_nitroTpmSupport;
+    bool m_nitroTpmSupportHasBeenSet = false;
+
+    NitroTpmInfo m_nitroTpmInfo;
+    bool m_nitroTpmInfoHasBeenSet = false;
   };
 
 } // namespace Model

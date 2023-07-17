@@ -20,12 +20,15 @@ namespace Model
 
 DataLakeSettings::DataLakeSettings() : 
     m_dataLakeAdminsHasBeenSet(false),
+    m_readOnlyAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_trustedResourceOwnersHasBeenSet(false),
     m_allowExternalDataFiltering(false),
     m_allowExternalDataFilteringHasBeenSet(false),
+    m_allowFullTableExternalDataAccess(false),
+    m_allowFullTableExternalDataAccessHasBeenSet(false),
     m_externalDataFilteringAllowListHasBeenSet(false),
     m_authorizedSessionTagValueListHasBeenSet(false)
 {
@@ -33,12 +36,15 @@ DataLakeSettings::DataLakeSettings() :
 
 DataLakeSettings::DataLakeSettings(JsonView jsonValue) : 
     m_dataLakeAdminsHasBeenSet(false),
+    m_readOnlyAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_trustedResourceOwnersHasBeenSet(false),
     m_allowExternalDataFiltering(false),
     m_allowExternalDataFilteringHasBeenSet(false),
+    m_allowFullTableExternalDataAccess(false),
+    m_allowFullTableExternalDataAccessHasBeenSet(false),
     m_externalDataFilteringAllowListHasBeenSet(false),
     m_authorizedSessionTagValueListHasBeenSet(false)
 {
@@ -55,6 +61,16 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
       m_dataLakeAdmins.push_back(dataLakeAdminsJsonList[dataLakeAdminsIndex].AsObject());
     }
     m_dataLakeAdminsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReadOnlyAdmins"))
+  {
+    Aws::Utils::Array<JsonView> readOnlyAdminsJsonList = jsonValue.GetArray("ReadOnlyAdmins");
+    for(unsigned readOnlyAdminsIndex = 0; readOnlyAdminsIndex < readOnlyAdminsJsonList.GetLength(); ++readOnlyAdminsIndex)
+    {
+      m_readOnlyAdmins.push_back(readOnlyAdminsJsonList[readOnlyAdminsIndex].AsObject());
+    }
+    m_readOnlyAdminsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreateDatabaseDefaultPermissions"))
@@ -104,6 +120,13 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     m_allowExternalDataFilteringHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllowFullTableExternalDataAccess"))
+  {
+    m_allowFullTableExternalDataAccess = jsonValue.GetBool("AllowFullTableExternalDataAccess");
+
+    m_allowFullTableExternalDataAccessHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ExternalDataFilteringAllowList"))
   {
     Aws::Utils::Array<JsonView> externalDataFilteringAllowListJsonList = jsonValue.GetArray("ExternalDataFilteringAllowList");
@@ -139,6 +162,17 @@ JsonValue DataLakeSettings::Jsonize() const
      dataLakeAdminsJsonList[dataLakeAdminsIndex].AsObject(m_dataLakeAdmins[dataLakeAdminsIndex].Jsonize());
    }
    payload.WithArray("DataLakeAdmins", std::move(dataLakeAdminsJsonList));
+
+  }
+
+  if(m_readOnlyAdminsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> readOnlyAdminsJsonList(m_readOnlyAdmins.size());
+   for(unsigned readOnlyAdminsIndex = 0; readOnlyAdminsIndex < readOnlyAdminsJsonList.GetLength(); ++readOnlyAdminsIndex)
+   {
+     readOnlyAdminsJsonList[readOnlyAdminsIndex].AsObject(m_readOnlyAdmins[readOnlyAdminsIndex].Jsonize());
+   }
+   payload.WithArray("ReadOnlyAdmins", std::move(readOnlyAdminsJsonList));
 
   }
 
@@ -189,6 +223,12 @@ JsonValue DataLakeSettings::Jsonize() const
   if(m_allowExternalDataFilteringHasBeenSet)
   {
    payload.WithBool("AllowExternalDataFiltering", m_allowExternalDataFiltering);
+
+  }
+
+  if(m_allowFullTableExternalDataAccessHasBeenSet)
+  {
+   payload.WithBool("AllowFullTableExternalDataAccess", m_allowFullTableExternalDataAccess);
 
   }
 
