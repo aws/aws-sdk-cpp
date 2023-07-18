@@ -59,6 +59,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.disableExpectHeader = false;
     clientConfig.enableClockSkewAdjustment = true;
     clientConfig.enableHostPrefixInjection = true;
+    clientConfig.enableHttpClientTrace = false;
     clientConfig.profileName = Aws::Auth::GetConfigProfileName();
 
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << clientConfig.profileName << "] if not specified by users.");

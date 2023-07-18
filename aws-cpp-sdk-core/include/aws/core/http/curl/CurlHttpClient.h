@@ -66,6 +66,7 @@ private:
     Aws::String m_caFile;
     bool m_disableExpectHeader;
     bool m_allowRedirects;
+    bool m_enableHttpClientTrace;
     static std::atomic<bool> isInit;
 };
 
