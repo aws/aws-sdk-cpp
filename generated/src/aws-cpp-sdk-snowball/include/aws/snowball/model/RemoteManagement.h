@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     INSTALLED_ONLY,
-    INSTALLED_AUTOSTART
+    INSTALLED_AUTOSTART,
+    NOT_INSTALLED
   };
 
 namespace RemoteManagementMapper

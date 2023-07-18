@@ -16,9 +16,9 @@ namespace Aws
 namespace CodeGuruSecurity
 {
   /**
-   * <p>This section provides documentation for the <a
-   * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html">Amazon
-   * CodeGuru Security</a> API operations. CodeGuru Security is a service that uses
+   *  <p>Amazon CodeGuru Security is in preview release and is subject to
+   * change.</p>  <p>This section provides documentation for the Amazon
+   * CodeGuru Security API operations. CodeGuru Security is a service that uses
    * program analysis and machine learning to detect security policy violations and
    * vulnerabilities, and recommends ways to address these security risks.</p> <p>By
    * proactively detecting and providing recommendations for addressing security
@@ -295,7 +295,8 @@ namespace CodeGuruSecurity
         }
 
         /**
-         * <p>Returns a list of all the scans in an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all the standard scans in an account. Does not return
+         * express scans.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListScans">AWS
          * API Reference</a></p>
          */

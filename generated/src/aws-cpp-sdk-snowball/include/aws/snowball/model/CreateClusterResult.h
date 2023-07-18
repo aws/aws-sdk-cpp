@@ -72,49 +72,49 @@ namespace Model
 
     /**
      * <p>List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
      * in this guide.</p>
      */
     inline const Aws::Vector<JobListEntry>& GetJobListEntries() const{ return m_jobListEntries; }
 
     /**
      * <p>List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
      * in this guide.</p>
      */
     inline void SetJobListEntries(const Aws::Vector<JobListEntry>& value) { m_jobListEntries = value; }
 
     /**
      * <p>List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
      * in this guide.</p>
      */
     inline void SetJobListEntries(Aws::Vector<JobListEntry>&& value) { m_jobListEntries = std::move(value); }
 
     /**
      * <p>List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
      * in this guide.</p>
      */
     inline CreateClusterResult& WithJobListEntries(const Aws::Vector<JobListEntry>& value) { SetJobListEntries(value); return *this;}
 
     /**
      * <p>List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
      * in this guide.</p>
      */
     inline CreateClusterResult& WithJobListEntries(Aws::Vector<JobListEntry>&& value) { SetJobListEntries(std::move(value)); return *this;}
 
     /**
      * <p>List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
      * in this guide.</p>
      */
     inline CreateClusterResult& AddJobListEntries(const JobListEntry& value) { m_jobListEntries.push_back(value); return *this; }
 
     /**
      * <p>List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
      * in this guide.</p>
      */
     inline CreateClusterResult& AddJobListEntries(JobListEntry&& value) { m_jobListEntries.push_back(std::move(value)); return *this; }

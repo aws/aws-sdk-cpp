@@ -223,18 +223,19 @@ namespace Snowball
          * Snowball Edge Compute Optimized without GPU</p> </li> </ul> <p/> </li> <li>
          * <p>Device type: <b>EDGE</b> </p> <ul> <li> <p>Capacity: T100</p> </li> <li>
          * <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p> </li> </ul>
-         * <p/> </li> <li> <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity:
-         * T50</p> </li> <li> <p>Description: Original Snowball device</p>  <p>This
-         * device is only available in the Ningxia, Beijing, and Singapore Amazon Web
-         * Services Region </p>  </li> </ul> <p/> </li> <li> <p>Device type:
-         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description:
-         * Original Snowball device</p>  <p>This device is only available in the
-         * Ningxia, Beijing, and Singapore Amazon Web Services Region. </p>  </li>
-         * </ul> <p/> </li> <li> <p>Device type: <b>V3_5C</b> </p> <ul> <li> <p>Capacity:
-         * T32</p> </li> <li> <p>Description: Snowball Edge Compute Optimized without
-         * GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>V3_5S</b> </p> <ul> <li>
-         * <p>Capacity: T240</p> </li> <li> <p>Description: Snowball Edge Storage Optimized
-         * 210TB</p> </li> </ul> <p/> </li> </ul><p><h3>See Also:</h3>   <a
+         *  <p>This device is replaced with T98.</p>  <p/> </li> <li>
+         * <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T50</p> </li> <li>
+         * <p>Description: Original Snowball device</p>  <p>This device is only
+         * available in the Ningxia, Beijing, and Singapore Amazon Web Services Region </p>
+         *  </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b> </p> <ul>
+         * <li> <p>Capacity: T80</p> </li> <li> <p>Description: Original Snowball
+         * device</p>  <p>This device is only available in the Ningxia, Beijing, and
+         * Singapore Amazon Web Services Region. </p>  </li> </ul> <p/> </li> <li>
+         * <p>Snow Family device type: <b>RACK_5U_C</b> </p> <ul> <li> <p>Capacity: T13
+         * </p> </li> <li> <p>Description: Snowblade.</p> </li> </ul> </li> <li> <p>Device
+         * type: <b>V3_5S</b> </p> <ul> <li> <p>Capacity: T240</p> </li> <li>
+         * <p>Description: Snowball Edge Storage Optimized 210TB</p> </li> </ul> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          */
@@ -635,14 +636,14 @@ namespace Snowball
         }
 
         /**
-         * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your Amazon Web Services accountthat would be supported
-         * for use on a Snow device. Currently, supported AMIs are based on the Amazon
-         * Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available
-         * on the Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images
-         * are no longer supported in the Market, but still supported for use on devices
-         * through Amazon EC2 VM Import/Export and running locally in AMIs.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This action returns a list of the different Amazon EC2-compatible Amazon
+         * Machine Images (AMIs) that are owned by your Amazon Web Services accountthat
+         * would be supported for use on a Snow device. Currently, supported AMIs are based
+         * on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy
+         * images, available on the Amazon Web Services Marketplace. Ubuntu 16.04 LTS -
+         * Xenial (HVM) images are no longer supported in the Market, but still supported
+         * for use on devices through Amazon EC2 VM Import/Export and running locally in
+         * AMIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          */
@@ -719,6 +720,32 @@ namespace Snowball
         void ListLongTermPricingAsync(const ListLongTermPricingRequestT& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SnowballClient::ListLongTermPricing, request, handler, context);
+        }
+
+        /**
+         * <p>A list of locations from which the customer can choose to pickup a
+         * device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPickupLocationsOutcome ListPickupLocations(const Model::ListPickupLocationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPickupLocations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPickupLocationsRequestT = Model::ListPickupLocationsRequest>
+        Model::ListPickupLocationsOutcomeCallable ListPickupLocationsCallable(const ListPickupLocationsRequestT& request) const
+        {
+            return SubmitCallable(&SnowballClient::ListPickupLocations, request);
+        }
+
+        /**
+         * An Async wrapper for ListPickupLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPickupLocationsRequestT = Model::ListPickupLocationsRequest>
+        void ListPickupLocationsAsync(const ListPickupLocationsRequestT& request, const ListPickupLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SnowballClient::ListPickupLocations, request, handler, context);
         }
 
         /**

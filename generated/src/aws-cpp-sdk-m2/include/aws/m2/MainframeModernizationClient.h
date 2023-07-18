@@ -474,6 +474,31 @@ namespace MainframeModernization
         }
 
         /**
+         * <p>Gets a single sign-on URL that can be used to connect to AWS Blu
+         * Insights.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSignedBluinsightsUrlOutcome GetSignedBluinsightsUrl() const;
+
+        /**
+         * A Callable wrapper for GetSignedBluinsightsUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename = void>
+        Model::GetSignedBluinsightsUrlOutcomeCallable GetSignedBluinsightsUrlCallable() const
+        {
+            return SubmitCallable(&MainframeModernizationClient::GetSignedBluinsightsUrl);
+        }
+
+        /**
+         * An Async wrapper for GetSignedBluinsightsUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename = void>
+        void GetSignedBluinsightsUrlAsync(const GetSignedBluinsightsUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MainframeModernizationClient::GetSignedBluinsightsUrl, handler, context);
+        }
+        /**
          * <p>Returns a list of the application versions for a specific
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListApplicationVersions">AWS

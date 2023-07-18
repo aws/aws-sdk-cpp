@@ -39,6 +39,7 @@
 #include <aws/snowball/model/ListCompatibleImagesResult.h>
 #include <aws/snowball/model/ListJobsResult.h>
 #include <aws/snowball/model/ListLongTermPricingResult.h>
+#include <aws/snowball/model/ListPickupLocationsResult.h>
 #include <aws/snowball/model/ListServiceVersionsResult.h>
 #include <aws/snowball/model/UpdateClusterResult.h>
 #include <aws/snowball/model/UpdateJobResult.h>
@@ -105,6 +106,7 @@ namespace Aws
       class ListCompatibleImagesRequest;
       class ListJobsRequest;
       class ListLongTermPricingRequest;
+      class ListPickupLocationsRequest;
       class ListServiceVersionsRequest;
       class UpdateClusterRequest;
       class UpdateJobRequest;
@@ -134,6 +136,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListCompatibleImagesResult, SnowballError> ListCompatibleImagesOutcome;
       typedef Aws::Utils::Outcome<ListJobsResult, SnowballError> ListJobsOutcome;
       typedef Aws::Utils::Outcome<ListLongTermPricingResult, SnowballError> ListLongTermPricingOutcome;
+      typedef Aws::Utils::Outcome<ListPickupLocationsResult, SnowballError> ListPickupLocationsOutcome;
       typedef Aws::Utils::Outcome<ListServiceVersionsResult, SnowballError> ListServiceVersionsOutcome;
       typedef Aws::Utils::Outcome<UpdateClusterResult, SnowballError> UpdateClusterOutcome;
       typedef Aws::Utils::Outcome<UpdateJobResult, SnowballError> UpdateJobOutcome;
@@ -163,6 +166,7 @@ namespace Aws
       typedef std::future<ListCompatibleImagesOutcome> ListCompatibleImagesOutcomeCallable;
       typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
       typedef std::future<ListLongTermPricingOutcome> ListLongTermPricingOutcomeCallable;
+      typedef std::future<ListPickupLocationsOutcome> ListPickupLocationsOutcomeCallable;
       typedef std::future<ListServiceVersionsOutcome> ListServiceVersionsOutcomeCallable;
       typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
       typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
@@ -195,6 +199,7 @@ namespace Aws
     typedef std::function<void(const SnowballClient*, const Model::ListCompatibleImagesRequest&, const Model::ListCompatibleImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCompatibleImagesResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListLongTermPricingRequest&, const Model::ListLongTermPricingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLongTermPricingResponseReceivedHandler;
+    typedef std::function<void(const SnowballClient*, const Model::ListPickupLocationsRequest&, const Model::ListPickupLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPickupLocationsResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListServiceVersionsRequest&, const Model::ListServiceVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceVersionsResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::UpdateClusterRequest&, const Model::UpdateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::UpdateJobRequest&, const Model::UpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobResponseReceivedHandler;

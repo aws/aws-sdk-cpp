@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image
-   * (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has
-   * these two IDs to simplify identifying the AMI in both the Amazon Web Services
-   * Cloud and on the device.</p><p><h3>See Also:</h3>   <a
+   * (AMI), including the Amazon EC2-compatible AMI ID and the Snow device AMI ID.
+   * Each AMI has these two IDs to simplify identifying the AMI in both the Amazon
+   * Web Services Cloud and on the device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Ec2AmiResource">AWS
    * API Reference</a></p>
    */
